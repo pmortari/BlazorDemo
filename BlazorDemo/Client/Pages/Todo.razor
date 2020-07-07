@@ -1,0 +1,31 @@
+﻿@page "/todo"
+@using BlazorDemo.Shared
+
+<h3>Todo (@_toDos.Count(toDo => toDo.IsDone == false))</h3>
+
+<ul>
+    @foreach (var toDo in _toDos)
+    {
+        <li>
+            <input type="checkbox" @bind="toDo.IsDone" />
+            <input @bind="toDo.Title" />
+        </li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind="newTodo" />
+<button @onclick="AddTodo">Add todo</button>
+
+@code {
+    private readonly IList<TodoItem> _toDos = new List<TodoItem>();
+    private string newTodo;
+
+    private void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newTodo))
+        {
+            _toDos.Add(new TodoItem { Title = newTodo });
+            newTodo = string.Empty;
+        }
+    }
+}

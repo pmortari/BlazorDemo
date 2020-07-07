@@ -1,0 +1,7 @@
+﻿BlazorDemo/Client/bin
+BlazorDemo/Client/obj
+BlazorDemo/Server/bin
+BlazorDemo/Shared/obj
+BlazorDemo/Shared/bin
+BlazorDemo/Server/obj/Release/netcoreapp3.1/PubTmp/Out/wwwroot/_framework/_bin
+BlazorDemo/Server/obj
